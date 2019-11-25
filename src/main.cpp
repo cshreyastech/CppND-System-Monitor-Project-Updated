@@ -4,4 +4,6 @@
 int main() {
   System system;
   NCursesDisplay::Display(system);
+
+//  LinuxParser::CpuUtilization();
 }

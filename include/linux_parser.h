@@ -4,6 +4,7 @@
 #include <fstream>
 #include <regex>
 #include <string>
+#include <unordered_map>
 
 namespace LinuxParser {
 // Paths
@@ -18,6 +19,7 @@ const std::string kVersionFilename{"/version"};
 const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
 
+
 // System
 float MemoryUtilization();
 long UpTime();
@@ -26,6 +28,8 @@ int TotalProcesses();
 int RunningProcesses();
 std::string OperatingSystem();
 std::string Kernel();
+void ParseProcStat();
+
 
 // CPU
 enum CPUStates {
@@ -40,6 +44,7 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
+
 std::vector<std::string> CpuUtilization();
 long Jiffies();
 long ActiveJiffies();
